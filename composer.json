@@ -1,0 +1,21 @@
+{
+	"name": "rafas/minhas-fotos",
+	"description": "O projeto consiste em sistema web que permite usuários armazenarem suas fotos",
+	"type": "project",
+	"authors": [
+		{
+			"name": "rafaelsantiagosilva"
+		}
+	],
+	"require": {
+		"vlucas/phpdotenv": "^5.6"
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "src/"
+		}
+	},
+	"scripts": {
+		"start": "php -S localhost:3333 -t public"
+	}
+}

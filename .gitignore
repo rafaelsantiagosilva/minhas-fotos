@@ -1,0 +1,37 @@
+.env
+Atividade_PHP_BD_02_Fotografias_2025.pdf
+tailwind.config.js
+
+# Composer dependencies
+/vendor/
+
+# Composer lock file (optional, depends on project strategy)
+# composer.lock
+
+# Log files
+/storage/*.log
+/logs/*.log
+
+# Cache directories
+/bootstrap/cache/
+/storage/cache/
+/tmp/
+
+# Environment specific files
+.env
+.env.local
+.env.*.local
+
+# IDE and OS generated files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+/build/
+/dist/
+
+# Other temporary files
+*.bak
+*.tmp
