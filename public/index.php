@@ -28,8 +28,12 @@
 
       <div class="flex flex-col">
         <label for="email">Senha</label>
-        <input type="password" name="pass" id="inpPass"
-          class="bg-zinc-700 border border-zinc-600 rounded focus:outline-none px-2 py-1">
+        <div id="inpPassContainer" class="relative w-full">
+          <input type="password" name="pass" id="inpPass"
+            class="bg-zinc-700 border border-zinc-600 rounded focus:outline-none px-2 py-1 w-full">
+          <span class="absolute right-0 mt-2 mr-2 z-10 material-symbols-outlined cursor-pointer"
+            id="eye">visibility</span>
+        </div>
       </div>
 
       <button type="submit"
