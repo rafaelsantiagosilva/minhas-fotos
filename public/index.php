@@ -17,6 +17,8 @@
       class="w-[600px] absolute bottom-2">
   </div>
   <div class="h-full w-full md:w-1/2 flex flex-col justify-center items-center">
+    <h1 class="md:hidden text-3xl font-bold absolute top-28">Minhas Fotos</h1>
+
     <form class="flex flex-col justify-center w-[80%] gap-3 text-xl" action="" method="post">
       <h2 class="text-2xl font-bold text-center">Login</h2>
 
