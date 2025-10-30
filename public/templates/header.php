@@ -7,7 +7,7 @@
   <title>Minhas Fotos</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/globals.css">
+  <link rel="stylesheet" href="/styles/globals.css">
 </head>
 
-<body class="bg-zinc-800 text-white">
+<body class="bg-zinc-800 text-white h-dvh">
