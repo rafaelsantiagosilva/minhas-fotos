@@ -1,7 +1,11 @@
 <?php
 
+namespace Models;
+
 class User
 {
+  public string $id, $name, $email, $password;
+
   public function __construct(string $id, string $name, string $email, string $password)
   {
     $this->id = $id;

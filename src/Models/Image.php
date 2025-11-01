@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 class Image
 {
   public function __construct(

@@ -14,7 +14,7 @@
     </section>
 
     <img src="./images/picture.png" alt="Um quadro marrom de madeira com um desenho de uma montanha."
-      class="w-[600px] absolute bottom-2">
+      class="w-[38%] absolute bottom-0 mt-4">
   </div>
   <div class="h-full w-full md:w-1/2 flex flex-col justify-center items-center">
     <h1 class="md:hidden text-3xl font-bold absolute top-28">Minhas Fotos</h1>
@@ -44,7 +44,8 @@
       </button>
 
 
-      <a href="#" class="underline cursor-pointer text-center text-lg hover:text-zinc-100">Não possui uma conta?
+      <a href="./register.php" class="underline cursor-pointer text-center text-lg hover:text-zinc-100">Não possui uma
+        conta?
         Criar</a>
     </form>
   </div>

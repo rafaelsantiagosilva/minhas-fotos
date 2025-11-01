@@ -1,6 +1,9 @@
 <?php
 
-use App\Connection;
+namespace Repositories;
+
+use PDO;
+use Database\Connection;
 
 class ImagesRepository
 {

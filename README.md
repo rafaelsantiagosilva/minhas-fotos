@@ -2,7 +2,7 @@
 
 ## ⚙️ Requisitos Funcionais
 
-- [ ] O usuário deve poder se cadastrar
+- [x] O usuário deve poder se cadastrar
 - [ ] O usuário deve poder fazer login
 - [ ] O usuário deve poder deslogar de sua conta
 - [ ] O usuário deve poder fazer upload uma imagem, com um nome e uma descrição
@@ -12,9 +12,9 @@
 
 ## ✍️ Requisitos Não Funcionais
 
-- [ ] A senha deve ser criptografada
+- [x] A senha deve ser criptografada
 - [ ] Não deve ser possível cadastrar mais de uma conta com o mesmo e-mail
-- [ ] O banco de dados deve ser o MySQL
+- [x] O banco de dados deve ser o MySQL
 - [ ] Só se deve carregar até 10 imagens por página
 - [ ] Deve haver uma página de 404
 
