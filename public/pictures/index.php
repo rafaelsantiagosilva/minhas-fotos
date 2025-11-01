@@ -1,5 +1,5 @@
-<?php require_once "./templates/header.php" ?>
-<?php require_once "./templates/navbar.php" ?>
+<?php require_once "../templates/header.php" ?>
+<?php require_once "../templates/navbar.php" ?>
 
 <div class="w-full flex justify-end">
   <a href="./pictures/add.php"
@@ -14,4 +14,4 @@
     adicionando algumas ;)</p>
 </main>
 
-<?php require_once "./templates/footer.php" ?>
+<?php require_once "../templates/footer.php" ?>
