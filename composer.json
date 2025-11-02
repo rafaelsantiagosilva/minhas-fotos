@@ -17,7 +17,8 @@
 			"Models\\": "src/Models/",
 			"Database\\": "src/Database/",
 			"Repositories\\": "src/Repositories/",
-			"UseCases\\": "src/UseCases/"
+			"UseCases\\": "src/UseCases/",
+			"Exceptions\\": "src/Exceptions/"
 		}
 	},
 	"scripts": {

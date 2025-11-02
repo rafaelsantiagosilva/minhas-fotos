@@ -1,10 +1,10 @@
 <?php
-
 namespace Repositories;
 
+use Database\Connection;
 use Models\User;
 use PDO;
-use Database\Connection;
+use RecursiveArrayIterator;
 
 class UsersRepository
 {
@@ -21,6 +21,33 @@ class UsersRepository
     )";
 
     $this->conn->exec($sql);
+  }
+
+  public function get_by_email(string $user_email)
+  {
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(":email", $email);
+
+    $email = $user_email;
+
+    $data = [];
+    $stmt->execute();
+
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $user)
+      foreach ($user as $k => $row)
+        $data[$k] = $row;
+
+    if (count($data) === 0)
+      return null;
+
+    return new User(
+      $data["id"],
+      $data["name"],
+      $data["email"],
+      $data["password"]
+    );
   }
 
   public function create_user(User $user)

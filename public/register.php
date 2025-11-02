@@ -45,6 +45,7 @@
 <?php
 require_once __DIR__ . "/../vendor/autoload.php";
 use Controllers\UserController;
+use Exceptions\PublicException;
 
 session_start();
 
@@ -88,6 +89,9 @@ switch ($_SERVER["REQUEST_METHOD"]) {
       $controller->register($name, $email, $pass);
       header("location:pictures");
       exit;
+    } catch (PublicException $pe) {
+      alert($pe->getMessage());
+      break;
     } catch (Exception $e) {
       die("❌: {$e->getMessage()}");
     }

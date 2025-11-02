@@ -13,7 +13,7 @@
 ## ✍️ Requisitos Não Funcionais
 
 - [x] A senha deve ser criptografada
-- [ ] Não deve ser possível cadastrar mais de uma conta com o mesmo e-mail
+- [x] Não deve ser possível cadastrar mais de uma conta com o mesmo e-mail
 - [x] O banco de dados deve ser o MySQL
 - [ ] Só se deve carregar até 10 imagens por página
 - [ ] Deve haver uma página de 404
