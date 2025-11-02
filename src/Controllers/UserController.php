@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-use UseCases\FindUserByEmailUseCase;
+use UseCases\LoginUseCase;
 use UseCases\RegisterUserUseCase;
 use Models\User;
 
@@ -14,9 +14,9 @@ class UserController
     $registerUserUseCase->execute(new User("", $name, $email, $password));
   }
 
-  public function find_by_email(string $email)
+  public function login(string $email, string $password)
   {
-    $findUserByEmailUseCase = new FindUserByEmailUseCase();
-    $findUserByEmailUseCase->execute($email);
+    $loginUseCase = new LoginUseCase();
+    return $loginUseCase->execute($email, $password);
   }
 }

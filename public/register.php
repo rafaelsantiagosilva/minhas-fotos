@@ -43,7 +43,6 @@
 </div>
 
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
 use Controllers\UserController;
 use Exceptions\PublicException;
 
@@ -87,6 +86,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
       $pass = htmlspecialchars($_POST["pass"]);
 
       $controller->register($name, $email, $pass);
+      $_SESSION["user"] = $controller->login($email, $pass);
       header("location:pictures");
       exit;
     } catch (PublicException $pe) {
