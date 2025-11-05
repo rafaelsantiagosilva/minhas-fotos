@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION["user"]))
   header("location:/index.php");
 
-$username = explode(" ", $_SESSION["user"]->name)[0];
+$username = $_SESSION["user"]->name;
 
 ?>
 
@@ -17,7 +17,7 @@ $username = explode(" ", $_SESSION["user"]->name)[0];
   <div>
     <span id="spnProfile" class="flex gap-2 cursor-pointer">
       <i class="material-symbols-outlined text-xl">account_circle</i>
-      <p class="truncate w-fit max-w-28"><?= $username ?></p>
+      <p class="truncate w-28"><?= $username ?></p>
     </span>
 
     <div id="divLogout"
