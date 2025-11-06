@@ -20,7 +20,7 @@ $images = $controller->fetch_by_user_id($user_id);
 <main class="w-full h-[80%] flex items-center justify-center mb-10">
   <?php if (count($images) === 0): ?>
 
-    <p class="font-semibold text-zinc-700 text-4xl text-center w-[60%]">Não há nenhuma foto para mostrar. Comece
+    <p class="font-semibold text-zinc-700 text-4xl text-center w-[60%] absolute">Não há nenhuma foto para mostrar. Comece
       adicionando algumas ;)</p>
 
   <?php endif; ?>
