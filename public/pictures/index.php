@@ -7,6 +7,7 @@ use Controllers\ImageController;
 $controller = new ImageController();
 $user_id = $_SESSION["user"]->id;
 $images = $controller->fetch_by_user_id($user_id);
+$timezone = new \DateTimeZone("America/Sao_Paulo");
 ?>
 
 <div class="w-full flex justify-end">
@@ -27,7 +28,7 @@ $images = $controller->fetch_by_user_id($user_id);
 
   <div class="flex flex-wrap justify-center md:justify-start w-full h-full gap-4 overflow-x-auto pt-4 px-6">
     <?php foreach ($images as $idx => $image): ?>
-      <section class="w-64 h-[400px] shadow border-4 border-zinc-700 transition-all rounded-sm">
+      <section class="w-64 h-[400px] shadow border-4 border-zinc-700 bg-zinc-900 transition-all rounded-sm">
         <div class="relative">
           <img src="<?= $image->path ?>" alt="Imagem de <?= $image->title ?>"
             class="w-full h-40 object-cover rounded border-b-4 border-zinc-700 rounded-b-none">
@@ -46,7 +47,9 @@ $images = $controller->fetch_by_user_id($user_id);
           <?= $image->title ?>
         </h2>
         <p class="p-2 h-[160px] line-clamp-7"><?= $image->description ?></p>
-        <footer class="w-full border-t-4 border-zinc-700 text-sm pt-1"><?= $image->created_at->format("d/m/Y") ?></footer>
+        <footer class="w-full border-t-4 border-zinc-700 text-sm pt-1">
+          <?= $image->created_at->setTimezone($timezone)->format("d/m/Y") ?>
+        </footer>
       </section>
 
       <div class="overlay hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-all">
