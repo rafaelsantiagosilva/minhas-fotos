@@ -4,12 +4,15 @@ namespace Models;
 
 class Image
 {
+  public string $id, $title, $path, $description, $user_id;
+  public \DateTime $created_at;
+
   public function __construct(
     string $id,
     string $title,
     string $path,
     ?string $description,
-    DateTime $created_at,
+    \DateTime $created_at,
     string $user_id
   ) {
     $this->id = $id;

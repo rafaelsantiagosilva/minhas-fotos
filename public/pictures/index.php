@@ -2,7 +2,7 @@
 <?php require_once "../templates/navbar.php" ?>
 
 <div class="w-full flex justify-end">
-  <a href="./pictures/add.php"
+  <a href="./add.php"
     class="p-2 bg-zinc-100 hover:bg-zinc-200 rounded text-zinc-800 cursor-pointer flex items-center gap-1 mt-10 mr-5">
     <i class="material-symbols-outlined">control_point</i>
     Adicionar

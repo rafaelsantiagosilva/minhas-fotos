@@ -4,6 +4,7 @@ namespace Repositories;
 
 use PDO;
 use Database\Connection;
+use Models\Image;
 
 class ImagesRepository
 {
@@ -25,5 +26,24 @@ class ImagesRepository
     )";
 
     $this->conn->exec($sql);
+  }
+
+  public function create_image(Image $image): void
+  {
+    $sql = "INSERT INTO images (id, title, path, description, created_at, user_id) 
+    VALUES (:id, :title, :path, :description, :created_at, :user_id)";
+
+    $stmt = $this->conn->prepare($sql);
+
+    $stmt->bindParam(":id", $image->id);
+    $stmt->bindParam(":title", $image->title);
+    $stmt->bindParam(":path", $image->path);
+    $stmt->bindParam(":description", $image->description);
+
+    $createdAt = $image->created_at->format("Y-m-d H:i:s");
+    $stmt->bindParam(":created_at", $createdAt);
+    $stmt->bindParam(":user_id", $image->user_id);
+
+    $stmt->execute();
   }
 }
