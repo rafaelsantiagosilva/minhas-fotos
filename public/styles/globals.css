@@ -3,3 +3,19 @@
 * {
 	font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
+
+/* Estiliza a barra de rolagem inteira */
+::-webkit-scrollbar {
+	width: 12px; /* Largura da barra de rolagem */
+}
+
+/* Estiliza a trilha (fundo) da barra de rolagem */
+::-webkit-scrollbar-track {
+	background: transparent; /* Cor de fundo da trilha */
+}
+
+/* Estiliza o polegar (a parte que se move) */
+::-webkit-scrollbar-thumb {
+	background: oklch(14.1% 0.005 285.823); /* Cor do polegar */
+	border-radius: 6px; /* Bordas arredondadas */
+}

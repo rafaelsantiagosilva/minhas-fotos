@@ -63,8 +63,8 @@ switch ($_SERVER["REQUEST_METHOD"]) {
     }
 
     try {
-      $title = htmlspecialchars($_POST["title"]);
-      $description = htmlspecialchars($_POST["description"]);
+      $title = trim(htmlspecialchars($_POST["title"]));
+      $description = trim(htmlspecialchars($_POST["description"]));
 
       $controller->upload($title, $description, $_SESSION["user"]->id);
 

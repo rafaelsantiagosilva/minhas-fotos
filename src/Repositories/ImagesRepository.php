@@ -14,7 +14,7 @@ class ImagesRepository
   {
     $this->conn = Connection::getConnection();
 
-    $usersRepository = new UsersRepository(); // create the users table
+    new UsersRepository(); // create the users table
 
     $sql = "CREATE TABLE IF NOT EXISTS images (
     id VARCHAR(255) PRIMARY KEY,
@@ -27,6 +27,35 @@ class ImagesRepository
     )";
 
     $this->conn->exec($sql);
+  }
+
+  public function get_by_id(string $image_id)
+  {
+    $sql = "SELECT * FROM images WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(":id", $id);
+
+    $id = $image_id;
+
+    $data = [];
+    $stmt->execute();
+
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $user)
+      foreach ($user as $k => $row)
+        $data[$k] = $row;
+
+    if (count($data) === 0)
+      return null;
+
+    return new Image(
+      $data["id"],
+      $data["title"],
+      $data["path"],
+      $data["description"],
+      new \DateTime($data["created_at"]),
+      $data["user_id"]
+    );
   }
 
   public function create_image(Image $image): void
@@ -77,5 +106,14 @@ class ImagesRepository
     }
 
     return $images;
+  }
+
+  public function delete($image_id)
+  {
+    $sql = "DELETE FROM images WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(":id", $image_id);
+
+    $stmt->execute();
   }
 }

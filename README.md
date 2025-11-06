@@ -8,7 +8,7 @@
 - [x] O usuário deve poder fazer upload uma imagem, com um nome e uma descrição
 - [x] O usuário deve poder visualizar suas imagens
 - [ ] O usuário deve poder visualizar cada imagem em uma página separada
-- [ ] O usuário deve poder excluir uma imagem
+- [x] O usuário deve poder excluir uma imagem
 
 ## ✍️ Requisitos Não Funcionais
 
