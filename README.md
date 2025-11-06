@@ -6,8 +6,8 @@
 - [x] O usuário deve poder fazer login
 - [x] O usuário deve poder deslogar de sua conta
 - [x] O usuário deve poder fazer upload uma imagem, com um nome e uma descrição
-- [ ] O usuário deve poder visualizar suas imagens
-- [ ] O usuário deve poder editar as informações de suas imagens
+- [x] O usuário deve poder visualizar suas imagens
+- [ ] O usuário deve poder visualizar cada imagem em uma página separada
 - [ ] O usuário deve poder excluir uma imagem
 
 ## ✍️ Requisitos Não Funcionais
@@ -15,7 +15,6 @@
 - [x] A senha deve ser criptografada
 - [x] Não deve ser possível cadastrar mais de uma conta com o mesmo e-mail
 - [x] O banco de dados deve ser o MySQL
-- [ ] Só se deve carregar até 10 imagens por página
 
 ## 💼 Regras de Negócio
 
