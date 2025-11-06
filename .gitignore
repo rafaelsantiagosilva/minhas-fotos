@@ -2,6 +2,7 @@
 Atividade_PHP_BD_02_Fotografias_2025.pdf
 tailwind.config.js
 db.sql
+public/uploads
 
 # Composer dependencies
 /vendor/
