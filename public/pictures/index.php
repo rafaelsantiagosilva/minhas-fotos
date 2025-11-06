@@ -33,7 +33,7 @@ $timezone = new \DateTimeZone("America/Sao_Paulo");
           <img src="<?= $image->path ?>" alt="Imagem de <?= $image->title ?>"
             class="w-full h-40 object-cover rounded border-b-4 border-zinc-700 rounded-b-none">
           <div class="flex items-center justify-end gap-1 absolute bottom-2 right-1">
-            <a
+            <a href="/pictures/view.php?id=<?= $image->id ?>"
               class="rounded-full cursor-pointer text-sky-500 bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center size-9 border-2 border-sky-900 shadow">
               <i class="material-symbols-outlined">search</i>
             </a>

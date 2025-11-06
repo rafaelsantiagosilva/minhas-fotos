@@ -26,7 +26,7 @@ class UploadImageUseCase
     if (!$this->is_file_type_valid())
       throw new InvalidImageTypeException();
 
-    $imageExtension = substr($_FILES["image"]["name"], -3);
+    $imageExtension = "." . substr($_FILES["image"]["type"], -(strlen($_FILES["image"]["type"]) - 6));
     $image->id = Uuid::uuid4()->toString();
     $image->path = "\\uploads\\{$image->user_id}\\";
 
