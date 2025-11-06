@@ -20,7 +20,7 @@
 ## 💼 Regras de Negócio
 
 - [x] O usuário não deve poder acessar nenhuma página além de login ou criação de conta caso não esteja autenticado
-- [ ] O usuário não deve poder fazer o upload de outros arquivos que não sejam imagens
-- [ ] O usuário não deve poder fazer o upload de imagens com mais de 15mb
+- [x] O usuário não deve poder fazer o upload de outros arquivos que não sejam imagens
+- [x] O usuário não deve poder fazer o upload de imagens com mais de 15mb
 - [x] Se o usuário acessar uma página privada sem estar cadastrado, ele deve ser redirecionado para a página de login
-- [ ] As imagens devem ser ordenadas com base em sua ordem de criação
+- [x] As imagens devem ser ordenadas com base em sua ordem de criação

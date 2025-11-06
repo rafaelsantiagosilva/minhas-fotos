@@ -23,6 +23,33 @@ class UsersRepository
     $this->conn->exec($sql);
   }
 
+  public function get_by_id(string $user_id)
+  {
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(":id", $id);
+
+    $id = $user_id;
+
+    $data = [];
+    $stmt->execute();
+
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $user)
+      foreach ($user as $k => $row)
+        $data[$k] = $row;
+
+    if (count($data) === 0)
+      return null;
+
+    return new User(
+      $data["id"],
+      $data["name"],
+      $data["email"],
+      $data["password"]
+    );
+  }
+
   public function get_by_email(string $user_email)
   {
     $sql = "SELECT * FROM users WHERE email = :email";

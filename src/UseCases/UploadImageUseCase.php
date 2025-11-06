@@ -35,6 +35,7 @@ class UploadImageUseCase
       mkdir($dir, 0777, true);
 
     $dir .= "{$image->id}.$imageExtension";
+    $image->path .= "{$image->id}.$imageExtension";
 
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $dir))
       $this->imagesRepository->create_image($image);

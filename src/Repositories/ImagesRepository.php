@@ -3,6 +3,7 @@
 namespace Repositories;
 
 use PDO;
+use RecursiveArrayIterator;
 use Database\Connection;
 use Models\Image;
 
@@ -45,5 +46,36 @@ class ImagesRepository
     $stmt->bindParam(":user_id", $image->user_id);
 
     $stmt->execute();
+  }
+
+  public function fetch_by_user_id(string $user_id): array
+  {
+    $images = [];
+
+    $sql = "SELECT * FROM images WHERE user_id = :user_id ORDER BY created_at ASC";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bindParam(":user_id", $user_id);
+
+    $stmt->execute();
+
+    $data = [];
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    foreach (new RecursiveArrayIterator($stmt->fetchAll()) as $image) {
+      $data = [];
+
+      foreach ($image as $k => $row)
+        $data[$k] = $row;
+
+      $images[] = new Image(
+        $data["id"],
+        $data["title"],
+        $data["path"],
+        $data["description"],
+        new \DateTime($data["created_at"]),
+        $data["user_id"]
+      );
+    }
+
+    return $images;
   }
 }
