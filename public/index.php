@@ -16,7 +16,7 @@ if (isset($_SESSION["user"]))
         sua
         jornada.
         Reviva os dias
-        especiais, as conquinstas e os instantes de sua vida. Coloque-os aqui para os valorizar e não perdê-los ao
+        especiais, as conquistas e os instantes de sua vida. Coloque-os aqui para os valorizar e não perdê-los ao
         longo do tempo.</p>
     </section>
 
