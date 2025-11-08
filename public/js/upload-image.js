@@ -27,11 +27,8 @@ buttonRemoveImage.addEventListener("click", () => {
 
 function isFileTypeValid(file) {
   const validTypes = [
-    "image/jpeg",
     "image/jpg",
     "image/png",
-    "image/gif",
-    "image/webp"
   ];
 
   const validTypesFormatted = validTypes.map(type => " " + type.slice(6).toUpperCase());

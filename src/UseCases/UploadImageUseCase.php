@@ -45,7 +45,7 @@ class UploadImageUseCase
 
   private function is_file_type_valid()
   {
-    $allowedTypes = ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/webp"];
+    $allowedTypes = ["image/jpg", "image/png"];
     return in_array($_FILES["image"]["type"], $allowedTypes);
   }
 
